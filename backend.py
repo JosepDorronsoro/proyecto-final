@@ -18,6 +18,9 @@ CORS(app, supports_credentials=True, origins=allowed_origins)
 
 app.config['SECRET_KEY'] = 'practicas-computacion-distribuida-2025'
 
+app.config['SESSION_COOKIE_SAMESITE'] = 'None'
+app.config['SESSION_COOKIE_SECURE'] = True
+
 def get_db_connection():
     try:
         database_url = os.environ.get('DATABASE_URL')
