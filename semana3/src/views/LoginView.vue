@@ -48,7 +48,7 @@ async function handleLogin() {
   loginError.value = null
 
   try {
-    const res = await fetch(`/api/login`, {
+    const res = await fetch(`${API_URL}/api/login`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       credentials: 'include',
@@ -78,7 +78,7 @@ async function handleRegister() {
   registerError.value = null
   registerSuccess.value = null
   try {
-    const res = await fetch(`/api/register`, {
+    const res = await fetch(`${API_URL}/api/register`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(registerForm)

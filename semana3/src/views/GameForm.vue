@@ -86,8 +86,8 @@ async function handleSubmit() {
   error.value = null
   try {
     const url = isEditing.value 
-      ? `${API_URL}/editar_juego/${props.id}` 
-      : `${API_URL}/anadir_juego`
+      ? `${API_URL}/api/editar_juego/${props.id}` 
+      : `${API_URL}/api/anadir_juego`
       
     const method = isEditing.value ? 'PUT' : 'POST'
 

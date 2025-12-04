@@ -99,7 +99,7 @@ async function handleDelete(gameId) {
   if (!confirm('¿Estás seguro de que quieres eliminar este juego?')) return
 
   try {
-    const res = await fetch(`/api/eliminar_juego/${gameId}`, {
+    const res = await fetch(`${API_URL}/api/eliminar_juego/${gameId}`, {
       method: 'DELETE',
       credentials: 'include'
     })
