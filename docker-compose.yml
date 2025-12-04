@@ -1,0 +1,14 @@
+services:
+  backend:
+    image: mi-backend           # <--- ¡IMPORTANTE! image, NO build
+    container_name: mi-backend
+    network_mode: "host"
+    environment:
+      - DB_HOST=127.0.0.1
+    restart: always
+
+  frontend:
+    image: mi-frontend          # <--- ¡IMPORTANTE! image, NO build
+    container_name: mi-frontend
+    network_mode: "host"
+    restart: always

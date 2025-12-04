@@ -1,0 +1,83 @@
+/* src/assets/main.css */
+
+/* 1. Importar una fuente "gamer" (usaremos Orbitron de Google Fonts) */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Poppins:wght@300;400&display=swap');
+
+/* 2. Definir las variables de color (nuestro tema) */
+:root {
+  --bg-primary: #0a0a1a;       /* Un azul/negro espacial muy oscuro */
+  --bg-secondary: #1a1a2e;    /* Un azul oscuro para las tarjetas */
+  --border-color: #3a3a5e;   /* Un borde púrpura/azul sutil */
+  --text-primary: #e0e0ff;   /* Texto principal (blanco-azulado) */
+  --text-secondary: #a0a0c0;  /* Texto secundario (gris-azulado) */
+  
+  --accent-primary: #00ffff; /* Neón Cian (¡el toque gamer!) */
+  --accent-hover: #99ffff;   /* Cian más claro para hovers */
+  --color-error: #ff3366;    /* Un rosa/rojo neón para errores */
+  --color-success: #00ff66;  /* Un verde neón para éxito */
+}
+
+/* 3. Aplicar estilos globales */
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: 'Poppins', sans-serif; /* Fuente limpia para párrafos */
+  margin: 0;
+  padding: 0;
+}
+
+/* Títulos con la fuente futurista */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Orbitron', sans-serif;
+  color: var(--accent-primary);
+  text-shadow: 0 0 5px rgba(0, 255, 255, 0.3); /* Pequeño "glow" al texto */
+}
+
+/* Estilos para inputs y botones globales */
+input[type="text"],
+input[type="password"],
+input[type="number"],
+textarea,
+select {
+  background-color: var(--bg-secondary);
+  color: var(--text-primary);
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  padding: 0.8rem;
+  font-family: 'Poppins', sans-serif;
+  box-sizing: border-box;
+}
+
+input:focus, textarea:focus, select:focus {
+  outline: none;
+  border-color: var(--accent-primary);
+  box-shadow: 0 0 10px rgba(0, 255, 255, 0.5); /* ¡Glow al seleccionar! */
+}
+
+button, a.button-style {
+  background-color: var(--accent-primary);
+  color: var(--bg-primary);
+  border: none;
+  border-radius: 6px;
+  padding: 0.8rem 1.2rem;
+  font-family: 'Orbitron', sans-serif;
+  font-weight: bold;
+  cursor: pointer;
+  text-transform: uppercase;
+  transition: all 0.2s ease;
+}
+
+button:hover, a.button-style:hover {
+  background-color: var(--accent-hover);
+  box-shadow: 0 0 15px rgba(0, 255, 255, 0.5);
+}
+
+/* Clases de utilidad para mensajes */
+.error {
+  color: var(--color-error);
+  font-weight: bold;
+}
+.success {
+  color: var(--color-success);
+  font-weight: bold;
+}
