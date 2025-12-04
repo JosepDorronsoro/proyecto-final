@@ -33,12 +33,12 @@ const routes = [
 
   {
     path: '/',
-    redirect: '/games'
+    redirect: '/login'
   },
 
   {
     path: '/:pathMatch(.*)*',
-    redirect: '/games'
+    redirect: '/login'
   }
 ]
 
