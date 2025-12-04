@@ -8,10 +8,17 @@ import os
 
 app = Flask(__name__)
 
-CORS(app, 
-     supports_credentials=True, 
-     origins=["http://172.16.13.133", "http://localhost:5173", "http://127.0.0.1:5173"]
-)
+allowed_origins = [
+   "http://localhost:5173",
+   "http://127.0.0.1:5173"
+]
+
+
+if os.environ.get('FRONTEND_URL'):
+   allowed_origins.append(os.environ.get('FRONTEND_URL'))
+
+
+CORS(app, supports_credentials=True, origins=allowed_origins)
 
 app.config['SECRET_KEY'] = 'practicas-computacion-distribuida-2025' # para crear las cookies
 
