@@ -70,7 +70,14 @@ router.beforeEach(async (to, from, next) => {
   } 
   
   else {
-    next();
+
+    if (to.name === 'Login' && isLoggedIn) {
+
+      next({ name: 'GameList' });
+    } else {
+
+      next();
+    }
   }
 })
 
